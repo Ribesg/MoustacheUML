@@ -18,13 +18,6 @@
 
 
 ## Java specific ##
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# Others #
 *.class
 
 
