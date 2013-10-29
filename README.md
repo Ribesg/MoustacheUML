@@ -3,7 +3,13 @@ MoustacheUML
 
 ![MoustacheUML Logo](img/MoustacheUML.png "MoustacheUML Logo")
 
+Description
+-----------
 Un Modeleur UML permettant de créer des diagrammes de classe et des diagrammes d'objet
+
+Jenkins - Serveur d'intégration continue
+----------------------------------------
+http://ci.ribesg.fr/job/MoustacheUML/
 
 Coding style
 ------------
