@@ -1,6 +1,6 @@
 package fr.ribesg.imag.moustacheuml.modele.lien;
 
-public enum Navigabilité {
+public enum Navigabilite {
 
 	/**
 	 * Navigabilité dans les deux sens

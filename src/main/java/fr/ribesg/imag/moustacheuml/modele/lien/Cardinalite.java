@@ -3,7 +3,7 @@ package fr.ribesg.imag.moustacheuml.modele.lien;
 /**
  * Cette classe représente une cardinalité qui pourra être associée à un lien.
  */
-public abstract class Cardinalité {
+public abstract class Cardinalite {
 
 	/**
 	 * On aura besoin de cette méthode standard dans la Vue.

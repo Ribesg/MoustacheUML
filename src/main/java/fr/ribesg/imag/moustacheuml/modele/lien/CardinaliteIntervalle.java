@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 /**
  * Cette classe représente la cardinalité "1..2" ou "2..*".
  */
-public class CardinalitéIntervalle extends Cardinalité {
+public class CardinaliteIntervalle extends Cardinalite {
 
 	/**
 	 * Cette expression régulière correspond à une chaine strictement égale à
@@ -23,7 +23,7 @@ public class CardinalitéIntervalle extends Cardinalité {
 	 */
 	private final String borneSupérieure;
 
-	public CardinalitéIntervalle(int borneInférieure, String borneSupérieure) {
+	public CardinaliteIntervalle(int borneInférieure, String borneSupérieure) {
 		if (borneInférieure < 0 || borneSupérieure == null || !regexBorneSupérieure.matcher(borneSupérieure).matches()) {
 			throw new IllegalArgumentException("L'une des borne au moins est incorrecte.");
 		} else if (!"*".equals(borneSupérieure) && Integer.parseInt(borneSupérieure) < borneInférieure) {

@@ -9,14 +9,14 @@ import fr.ribesg.imag.moustacheuml.modele.boite.Classe;
 public abstract class Lien {
 
 	private final Boite source;
-	private Cardinalité cardinalitéSource;
+	private Cardinalite cardinaliteSource;
 	private String rôleSource;
 
 	private final Boite destination;
-	private Cardinalité cardinalitéDestination;
+	private Cardinalite cardinaliteDestination;
 	private String rôleDestination;
 
-	private Navigabilité navigabilité;
+	private Navigabilite navigabilite;
 
 	/**
 	 * Permet de construire un lien "simple", sans cardinalité ni rôle.
@@ -24,18 +24,18 @@ public abstract class Lien {
 	 *
 	 * @param source       source du lien
 	 * @param destination  destination du lien
-	 * @param navigabilité navigabilité du lien
+	 * @param navigabilite navigabilité du lien
 	 */
-	protected Lien(Boite source, Boite destination, Navigabilité navigabilité) {
+	protected Lien(Boite source, Boite destination, Navigabilite navigabilite) {
 		this.source = source;
-		this.cardinalitéSource = null;
+		this.cardinaliteSource = null;
 		this.rôleSource = null;
 
 		this.destination = destination;
-		this.cardinalitéDestination = null;
+		this.cardinaliteDestination = null;
 		this.rôleDestination = null;
 
-		this.navigabilité = navigabilité;
+		this.navigabilite = navigabilite;
 	}
 
 	/**
@@ -45,37 +45,37 @@ public abstract class Lien {
 	 *
 	 * @param source                 source du lien
 	 * @param destination            destination du lien
-	 * @param cardinalitéSource      cardinalité au niveau de la source du
+	 * @param cardinaliteSource      cardinalité au niveau de la source du
 	 *                               lien
-	 * @param cardinalitéDestination cardinalité au niveau de la destination
+	 * @param cardinaliteDestination cardinalité au niveau de la destination
 	 *                               du lien
 	 * @param rôleSource             rôle au niveau de la source du lien
 	 * @param rôleDestination        rôle au niveau de la destination du
 	 *                               lien
-	 * @param navigabilité           navigabilité du lien
+	 * @param navigabilite           navigabilité du lien
 	 */
-	protected Lien(Classe source, Classe destination, Cardinalité cardinalitéSource, Cardinalité cardinalitéDestination, String rôleSource, String rôleDestination, Navigabilité navigabilité) {
+	protected Lien(Classe source, Classe destination, Cardinalite cardinaliteSource, Cardinalite cardinaliteDestination, String rôleSource, String rôleDestination, Navigabilite navigabilite) {
 		this.source = source;
-		this.cardinalitéSource = cardinalitéSource;
+		this.cardinaliteSource = cardinaliteSource;
 		this.rôleSource = rôleSource;
 
 		this.destination = destination;
-		this.cardinalitéDestination = cardinalitéDestination;
+		this.cardinaliteDestination = cardinaliteDestination;
 		this.rôleDestination = rôleDestination;
 
-		this.navigabilité = navigabilité;
+		this.navigabilite = navigabilite;
 	}
 
 	public Boite getSource() {
 		return source;
 	}
 
-	public Cardinalité getCardinalitéSource() {
-		return cardinalitéSource;
+	public Cardinalite getCardinaliteSource() {
+		return cardinaliteSource;
 	}
 
-	public void setCardinalitéSource(Cardinalité cardinalitéSource) {
-		this.cardinalitéSource = cardinalitéSource;
+	public void setCardinaliteSource(Cardinalite cardinaliteSource) {
+		this.cardinaliteSource = cardinaliteSource;
 	}
 
 	public String getRôleSource() {
@@ -90,12 +90,12 @@ public abstract class Lien {
 		return destination;
 	}
 
-	public Cardinalité getCardinalitéDestination() {
-		return cardinalitéDestination;
+	public Cardinalite getCardinaliteDestination() {
+		return cardinaliteDestination;
 	}
 
-	public void setCardinalitéDestination(Cardinalité cardinalitéDestination) {
-		this.cardinalitéDestination = cardinalitéDestination;
+	public void setCardinaliteDestination(Cardinalite cardinaliteDestination) {
+		this.cardinaliteDestination = cardinaliteDestination;
 	}
 
 	public String getRôleDestination() {
@@ -106,11 +106,11 @@ public abstract class Lien {
 		this.rôleDestination = rôleDestination;
 	}
 
-	public Navigabilité getNavigabilité() {
-		return navigabilité;
+	public Navigabilite getNavigabilite() {
+		return navigabilite;
 	}
 
-	public void setNavigabilité(Navigabilité navigabilité) {
-		this.navigabilité = navigabilité;
+	public void setNavigabilite(Navigabilite navigabilite) {
+		this.navigabilite = navigabilite;
 	}
 }

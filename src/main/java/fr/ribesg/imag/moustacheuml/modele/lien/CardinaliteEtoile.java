@@ -3,7 +3,7 @@ package fr.ribesg.imag.moustacheuml.modele.lien;
 /**
  * Cette classe représente la cardinalité "*".
  */
-public class CardinalitéEtoile extends Cardinalité {
+public class CardinaliteEtoile extends Cardinalite {
 
 	@Override
 	public String toString() {

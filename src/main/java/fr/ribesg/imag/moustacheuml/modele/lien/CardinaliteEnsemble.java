@@ -8,12 +8,12 @@ import java.util.TreeSet;
 /**
  * Cette classe représente une cardinalité du type "{0, 2, 4}"
  */
-public class CardinalitéEnsemble extends Cardinalité {
+public class CardinaliteEnsemble extends Cardinalite {
 
 	private final SortedSet<Integer> valeurs;
 
 
-	public CardinalitéEnsemble(Collection<Integer> valeurs) {
+	public CardinaliteEnsemble(Collection<Integer> valeurs) {
 		if (valeurs == null || valeurs.size() < 2) {
 			throw new IllegalArgumentException("Ceci n'est pas un ensemble valide");
 		}

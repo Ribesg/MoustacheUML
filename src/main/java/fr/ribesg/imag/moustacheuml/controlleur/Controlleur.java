@@ -1,25 +1,25 @@
 package fr.ribesg.imag.moustacheuml.controlleur;
 
-import fr.ribesg.imag.moustacheuml.vue.FenêtrePrincipale;
+import fr.ribesg.imag.moustacheuml.vue.FenetrePrincipale;
 
 public class Controlleur {
 
-	private final FenêtrePrincipale fenêtrePrincipale;
+	private final FenetrePrincipale fenetrePrincipale;
 
 	public Controlleur() {
-		this.fenêtrePrincipale = new FenêtrePrincipale(this);
+		this.fenetrePrincipale = new FenetrePrincipale(this);
 	}
 
-	public void montrerFenêtrePrincipale() {
-		this.fenêtrePrincipale.setVisible(true);
+	public void montrerFenetrePrincipale() {
+		this.fenetrePrincipale.setVisible(true);
 	}
 
-	public void cacherFenêtrePrincpale() {
-		this.fenêtrePrincipale.setVisible(false);
+	public void cacherFenetrePrincipale() {
+		this.fenetrePrincipale.setVisible(false);
 	}
 
 	public void quitter() {
-		this.fenêtrePrincipale.dispose();
+		this.fenetrePrincipale.dispose();
 		System.exit(0);
 	}
 }

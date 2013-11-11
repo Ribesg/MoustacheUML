@@ -14,7 +14,7 @@ import java.awt.event.WindowEvent;
  * - Le graphique
  * - La barre de statut
  */
-public class FenêtrePrincipale extends JFrame {
+public class FenetrePrincipale extends JFrame {
 
 	private final Controlleur controlleur;
 
@@ -22,7 +22,7 @@ public class FenêtrePrincipale extends JFrame {
 	private final VueGraphique vueGraphique;
 	private final VueBarreDeStatut vueBarreDeStatut;
 
-	public FenêtrePrincipale(Controlleur controlleur) {
+	public FenetrePrincipale(Controlleur controlleur) {
 		this.controlleur = controlleur;
 
 		this.vueMenu = new VueMenu(controlleur);
@@ -42,7 +42,7 @@ public class FenêtrePrincipale extends JFrame {
 
 			@Override
 			public void windowClosing(WindowEvent e) {
-				FenêtrePrincipale.this.controlleur.quitter();
+				FenetrePrincipale.this.controlleur.quitter();
 			}
 		});
 	}

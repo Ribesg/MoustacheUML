@@ -57,6 +57,6 @@ public class Main {
 	 */
 	public Main(String[] args) {
 		Controlleur controlleur = new Controlleur();
-		controlleur.montrerFenêtrePrincipale();
+		controlleur.montrerFenetrePrincipale();
 	}
 }
