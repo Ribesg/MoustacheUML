@@ -9,4 +9,12 @@ public class AttributValue {
 		this.attribut = attribut;
 		this.valeur = valeur;
 	}
+
+	public Attribut getAttribut() {
+		return attribut;
+	}
+
+	public Valeur getValeur() {
+		return valeur;
+	}
 }

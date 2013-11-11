@@ -1,5 +1,9 @@
 package fr.ribesg.imag.moustacheuml.modele.boite;
 
-public class TypePrimitif implements Type {
+public enum TypePrimitif implements Type {
 
+	ENTIER,
+	REEL,
+	BOOLEEN,
+	CHAINE
 }
