@@ -1,7 +1,8 @@
 package fr.ribesg.imag.moustacheuml;
 
+import fr.ribesg.imag.moustacheuml.controlleur.Controlleur;
+
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.PrintWriter;
@@ -55,21 +56,7 @@ public class Main {
 	 * @param args les arguments passés au programme
 	 */
 	public Main(String[] args) {
-		// Ouvre une fenêtre avec un Hello World
-		JFrame mainFrame = new JFrame("MoustacheUML");
-		JLabel helloWorldLabel = new JLabel("Hello wolrd!");
-
-		mainFrame.add(helloWorldLabel);
-
-		mainFrame.setMinimumSize(new Dimension(640, 480));
-		mainFrame.pack();
-		mainFrame.setVisible(true);
-		mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		mainFrame.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosed(WindowEvent e) {
-				System.exit(0);
-			}
-		});
+		Controlleur controlleur = new Controlleur();
+		controlleur.montrerFenêtrePrincipale();
 	}
 }
