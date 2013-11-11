@@ -161,7 +161,7 @@
 							<fileset>
 								<directory>${project.basedir}/src/main/java</directory>
 								<includes>
-									<include>**</include>
+									<include>fr.ribesg.imag.moustacheuml.**</include>
 								</includes>
 								<outputDirectory>target/${project.build.finalName}.jar/sources</outputDirectory>
 							</fileset>
