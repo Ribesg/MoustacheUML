@@ -56,42 +56,6 @@
 		</developer>
 	</developers>
 
-	<!--
-		On définit ici les repositories, c'est là que Maven va chercher les
-		plugins Maven et/ou librairies Java (ou pas Java d'ailleurs) qu'il
-		ne trouvepas dans les repositories qu'il connait déjà.
-		En gros, on met normalement ici les repositories non-standards.
-	-->
-	<repositories>
-		<repository>
-			<!--
-				Donc là je fais un truc hyper sale :
-				Comme JGraphX n'a pas de repo Maven officiel, je crée un
-				pseudo-repo DANS le repo Git. C'est mal.
-				Ne faites pas ça à la maison.
-			-->
-			<id>local-git-repo</id>
-			<url>file://${project.basedir}/lib/</url>
-		</repository>
-	</repositories>
-
-	<!--
-		C'est là qu'on définit les librairies dont on a besoin.
-		Comme dit plus tôt, Maven va se débrouiller pour les trouver, quelque part.
-	-->
-	<dependencies>
-		<dependency>
-			<!--
-				La libraire JGraphX. Il est possible que l'IDE ne trouve pas la
-				bonne version à cause du fait qu'elle est dans un pseudo-repo,
-				mais Maven la trouvera.
-			-->
-			<groupId>com.mxgraph</groupId>
-			<artifactId>jgraphx</artifactId>
-			<version>2.3.0.0</version>
-		</dependency>
-	</dependencies>
-
 	<!-- Ci-dessous la configuration du build -->
 	<build>
 
