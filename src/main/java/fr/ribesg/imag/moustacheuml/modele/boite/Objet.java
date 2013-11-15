@@ -5,13 +5,12 @@ import java.util.List;
 public class Objet extends Boite implements Valeur {
 
 	private Classe classe;
-	private String nom;
 	private List<AttributValue> attributsValues;
 
-	public Objet(List<AttributValue> attributsValues, Classe classe, String nom) {
+	public Objet(float posX, float posY, List<AttributValue> attributsValues, Classe classe, String nom) {
+		super(posX, posY, nom);
 		this.attributsValues = attributsValues;
 		this.classe = classe;
-		this.nom = nom;
 	}
 
 	public List<AttributValue> getAttributsValues() {
@@ -26,16 +25,32 @@ public class Objet extends Boite implements Valeur {
 		this.classe = classe;
 	}
 
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
+	@Override
+	public String getValeur() {
+		return getNom();
 	}
 
 	@Override
-	public String getValeur() {
-		return this.getNom();
+	public String[] getChaines() {
+		final String[] resultat = new String[2];
+		resultat[0] = getNom() + " : " + getClasse().getChaine();
+
+		if (attributsValues == null || attributsValues.isEmpty()) {
+			resultat[1] = "";
+		} else {
+			resultat[1] = attributsValues.get(0).getChaine();
+			for (int i = 1; i < attributsValues.size(); i++) {
+				resultat[1] += '\n' + attributsValues.get(i).getChaine();
+			}
+		}
+
+		return resultat;
 	}
+
+	@Override
+	public String getId() {
+		return "Objet=" + getNom() + ";" + (getClasse() == null ? "null" : getClasse().getId());
+	}
+
+
 }

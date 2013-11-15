@@ -17,4 +17,8 @@ public class AttributValue {
 	public Valeur getValeur() {
 		return valeur;
 	}
+
+	public String getChaine() {
+		return attribut.getNom() + " = " + valeur.getValeur();
+	}
 }

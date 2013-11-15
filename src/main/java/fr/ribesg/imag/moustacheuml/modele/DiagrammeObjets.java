@@ -15,4 +15,14 @@ public class DiagrammeObjets extends Diagramme {
 	public DiagrammeClasses getDiagrammeClasses() {
 		return diagrammeClasses;
 	}
+
+	@Override
+	public boolean estObjets() {
+		return true;
+	}
+
+	@Override
+	public boolean estClasses() {
+		return false;
+	}
 }

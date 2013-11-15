@@ -1,6 +1,6 @@
 package fr.ribesg.imag.moustacheuml;
 
-import fr.ribesg.imag.moustacheuml.controlleur.Controlleur;
+import fr.ribesg.imag.moustacheuml.controleur.Controleur;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
@@ -24,6 +24,8 @@ public class Main {
 		try {
 			new Main(args);
 		} catch (final Throwable t) {
+			t.printStackTrace();
+
 			// On affiche toute exception entrainant la fin du programme.
 			JDialog errorDialog = new JDialog(new JFrame(), "MoustacheUML - Erreur Fatale");
 
@@ -56,7 +58,7 @@ public class Main {
 	 * @param args les arguments passés au programme
 	 */
 	public Main(String[] args) {
-		Controlleur controlleur = new Controlleur();
-		controlleur.montrerFenetrePrincipale();
+		Controleur controleur = new Controleur();
+		controleur.montrerFenetrePrincipale();
 	}
 }

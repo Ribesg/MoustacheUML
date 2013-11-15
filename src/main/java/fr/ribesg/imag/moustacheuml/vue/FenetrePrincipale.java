@@ -1,6 +1,6 @@
 package fr.ribesg.imag.moustacheuml.vue;
 
-import fr.ribesg.imag.moustacheuml.controlleur.Controlleur;
+import fr.ribesg.imag.moustacheuml.controleur.Controleur;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,23 +16,23 @@ import java.awt.event.WindowEvent;
  */
 public class FenetrePrincipale extends JFrame {
 
-	private final Controlleur controlleur;
+	private final Controleur controleur;
 
 	private final VueMenu vueMenu;
-	private final VueGraphique vueGraphique;
+	private final VueEspacesDeTravail vueEspacesDeTravail;
 	private final VueBarreDeStatut vueBarreDeStatut;
 
-	public FenetrePrincipale(Controlleur controlleur) {
-		this.controlleur = controlleur;
+	public FenetrePrincipale(Controleur controleur) {
+		this.controleur = controleur;
 
-		this.vueMenu = new VueMenu(controlleur);
-		this.vueGraphique = new VueGraphique(controlleur);
-		this.vueBarreDeStatut = new VueBarreDeStatut(controlleur);
+		this.vueMenu = new VueMenu(controleur);
+		this.vueEspacesDeTravail = new VueEspacesDeTravail(controleur);
+		this.vueBarreDeStatut = new VueBarreDeStatut(controleur);
 
 		this.setTitle("MoustacheUML");
 
 		this.setJMenuBar(vueMenu);
-		this.add(vueGraphique, BorderLayout.CENTER);
+		this.add(vueEspacesDeTravail, BorderLayout.CENTER);
 		this.add(vueBarreDeStatut, BorderLayout.PAGE_END);
 
 		this.setMinimumSize(new Dimension(800, 600));
@@ -42,8 +42,20 @@ public class FenetrePrincipale extends JFrame {
 
 			@Override
 			public void windowClosing(WindowEvent e) {
-				FenetrePrincipale.this.controlleur.quitter();
+				FenetrePrincipale.this.controleur.quitter();
 			}
 		});
+	}
+
+	public VueBarreDeStatut getVueBarreDeStatut() {
+		return vueBarreDeStatut;
+	}
+
+	public VueEspacesDeTravail getVueEspacesDeTravail() {
+		return vueEspacesDeTravail;
+	}
+
+	public VueMenu getVueMenu() {
+		return vueMenu;
 	}
 }

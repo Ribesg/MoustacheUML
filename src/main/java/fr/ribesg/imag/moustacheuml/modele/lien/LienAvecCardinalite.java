@@ -105,4 +105,14 @@ public class LienAvecCardinalite extends Lien {
 	public void setRoleDestination(String rôleDestination) {
 		this.roleDestination = rôleDestination;
 	}
+
+	@Override
+	public int hashCode() {
+		int result = super.hashCode();
+		result = 31 * result + (cardinaliteSource != null ? cardinaliteSource.hashCode() : 0);
+		result = 31 * result + (roleSource != null ? roleSource.hashCode() : 0);
+		result = 31 * result + (cardinaliteDestination != null ? cardinaliteDestination.hashCode() : 0);
+		result = 31 * result + (roleDestination != null ? roleDestination.hashCode() : 0);
+		return result;
+	}
 }

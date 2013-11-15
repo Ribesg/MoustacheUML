@@ -5,5 +5,10 @@ public enum TypePrimitif implements Type {
 	ENTIER,
 	REEL,
 	BOOLEEN,
-	CHAINE
+	CHAINE;
+
+	@Override
+	public String getChaine() {
+		return this.name().toLowerCase();
+	}
 }

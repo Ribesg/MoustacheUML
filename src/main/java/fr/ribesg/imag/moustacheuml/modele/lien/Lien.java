@@ -53,4 +53,15 @@ public abstract class Lien {
 	public void setNavigabilite(Navigabilite navigabilite) {
 		this.navigabilite = navigabilite;
 	}
+
+	public String getId() {
+		return "Lien=" + getSource().getId() + "-" + getDestination().getId() + "-" + hashCode();
+	}
+
+	@Override
+	public int hashCode() {
+		int result = navigabilite.hashCode();
+		result = 31 * result + type.hashCode();
+		return result;
+	}
 }

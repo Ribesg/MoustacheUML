@@ -36,4 +36,8 @@ public class Attribut implements Visible {
 	public Visibilite getVisibilite() {
 		return visibilite;
 	}
+
+	public String getChaine() {
+		return getVisibilite().getCaractere() + " " + getNom() + " : " + getType().getChaine();
+	}
 }
