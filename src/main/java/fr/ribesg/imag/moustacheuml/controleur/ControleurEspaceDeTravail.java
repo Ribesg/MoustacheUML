@@ -2,6 +2,8 @@ package fr.ribesg.imag.moustacheuml.controleur;
 
 import fr.ribesg.imag.moustacheuml.modele.Diagramme;
 import fr.ribesg.imag.moustacheuml.modele.DiagrammeClasses;
+import fr.ribesg.imag.moustacheuml.modele.DiagrammeObjets;
+import fr.ribesg.imag.moustacheuml.modele.boite.Classe;
 import fr.ribesg.imag.moustacheuml.modele.boite.Stereotype;
 import fr.ribesg.imag.moustacheuml.utils.IdUtils;
 import fr.ribesg.imag.moustacheuml.vue.VueGraphique;
@@ -113,7 +115,7 @@ public class ControleurEspaceDeTravail extends Observable {
 	}
 
 	public void menuContextuelCreerObjet(int x, int y) {
-		// TODO Implement method
+		vue.afficherCreerUnObjet(x, y);
 	}
 
 	public void menuContextuelModifierClasse(int x, int y, String boiteAModifier) {
@@ -148,5 +150,9 @@ public class ControleurEspaceDeTravail extends Observable {
 
 	public boolean creerClasse(Stereotype stereotype, String nom, int x, int y) {
 		return ((DiagrammeClasses) getModele()).creerClasse(stereotype, nom, x, y);
+	}
+
+	public boolean creerObjet(Classe classe, String nom, int x, int y) {
+		return ((DiagrammeObjets) getModele()).creerObjet(classe, nom, x, y);
 	}
 }

@@ -33,7 +33,7 @@ public class Objet extends Boite implements Valeur {
 	@Override
 	public String[] getChaines() {
 		final String[] resultat = new String[2];
-		resultat[0] = getNom() + " : " + getClasse().getChaine();
+		resultat[0] = getNom() + " : " + (getClasse() == null ? "null" : getClasse().getChaine());
 
 		if (attributsValues == null || attributsValues.isEmpty()) {
 			resultat[1] = "";
@@ -52,5 +52,13 @@ public class Objet extends Boite implements Valeur {
 		return "Objet=" + getNom() + ";" + (getClasse() == null ? "null" : getClasse().getId());
 	}
 
+	@Override
+	public boolean estClasse() {
+		return false;
+	}
 
+	@Override
+	public boolean estObjet() {
+		return true;
+	}
 }

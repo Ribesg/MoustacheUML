@@ -71,5 +71,13 @@ public class Classe extends Boite implements Type {
 		return getNom();
 	}
 
+	@Override
+	public boolean estClasse() {
+		return true;
+	}
 
+	@Override
+	public boolean estObjet() {
+		return false;
+	}
 }

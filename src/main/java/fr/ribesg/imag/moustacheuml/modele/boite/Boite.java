@@ -40,6 +40,10 @@ public abstract class Boite {
 		return nom;
 	}
 
+	public abstract boolean estClasse();
+
+	public abstract boolean estObjet();
+
 	public abstract String[] getChaines();
 
 	public abstract String getId();

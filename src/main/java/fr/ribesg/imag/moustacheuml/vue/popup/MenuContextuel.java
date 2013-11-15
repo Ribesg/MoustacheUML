@@ -10,7 +10,7 @@ public class MenuContextuel extends JPopupMenu implements ActionListener {
 
 	private static final String CREER_LIEN = "Créer un lien";
 	private static final String CREER_CLASSE = "Créer une classe";
-	private static final String CREER_OBJET = "Créer une objet";
+	private static final String CREER_OBJET = "Créer un objet";
 	private static final String MODIFIER_CLASSE = "Modifier la classe %%";
 	private static final String MODIFIER_OBJET = "Modifier l'objet %%";
 	private static final String MODIFIER_ATTRIBUTS_CLASSE = "Modifier les attributs de la classe %%";

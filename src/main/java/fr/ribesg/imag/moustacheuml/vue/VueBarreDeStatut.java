@@ -11,7 +11,7 @@ public class VueBarreDeStatut extends JTextField {
 	public VueBarreDeStatut(Controleur controleur) {
 		this.controleur = controleur;
 
-		this.setText("Hello Wolrd!");
+		this.setText("Utilisez le menu pour créer un Diagramme");
 		this.setEditable(false);
 
 		this.setVisible(true);

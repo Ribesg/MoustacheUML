@@ -209,6 +209,10 @@ public class SwingGraph extends mxGraphComponent {
 
 			String titre = StringEscapeUtils.escapeHtml(chaines[0]);
 			double largeurTitre = largeurCellule(StringEscapeUtils.unescapeHtml(titre));
+			String styleTitre = mxConstants.STYLE_SHAPE + "=" + mxConstants.SHAPE_SWIMLANE + ";" + MONOSPACED_FONT;
+			if (boite.estObjet()) {
+				styleTitre += mxConstants.STYLE_FONTSTYLE + "=" + mxConstants.FONT_UNDERLINE + ";";
+			}
 
 			String attributs = chaines[1];
 			double largeurAttributs = largeurCellule(attributs);
@@ -218,7 +222,7 @@ public class SwingGraph extends mxGraphComponent {
 
 			double largeur = Math.max(largeurTitre, Math.max(largeurAttributs, largeurMethodes));
 
-			Object swimlane = graph.insertVertex(parent, IdUtils.prefixeBoite(boite.getId()), titre, boite.getPosX(), boite.getPosY(), largeur, 0, mxConstants.STYLE_SHAPE + "=" + mxConstants.SHAPE_SWIMLANE + ";" + MONOSPACED_FONT);
+			Object swimlane = graph.insertVertex(parent, IdUtils.prefixeBoite(boite.getId()), titre, boite.getPosX(), boite.getPosY(), largeur, 0, styleTitre);
 			graph.insertVertex(swimlane, IdUtils.prefixeAttribut(boite.getId()), attributs, 0, graph.getStartSize(swimlane).getHeight(), largeur, hauteurCellule(attributs), MONOSPACED_FONT + ALIGN_LEFT);
 			if (!methodes.isEmpty()) {
 				graph.insertVertex(swimlane, IdUtils.prefixeMethode(boite.getId()), methodes, 0, graph.getStartSize(swimlane).getHeight() + hauteurCellule(attributs), largeur, hauteurCellule(methodes), MONOSPACED_FONT + ALIGN_LEFT);
