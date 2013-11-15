@@ -56,6 +56,28 @@
 		</developer>
 	</developers>
 
+	<!--
+			C'est là qu'on définit les librairies dont on a besoin.
+			Comme dit plus tôt, Maven va se débrouiller pour les trouver, quelque part.
+	-->
+	<dependencies>
+		<dependency>
+			<!--
+					La libraire JGraphX. Il est possible que l'IDE ne trouve pas la
+					bonne version à cause du fait qu'elle est dans un pseudo-repo,
+					mais Maven la trouvera.
+			-->
+			<groupId>org.tinyjee.jgraphx</groupId>
+			<artifactId>jgraphx</artifactId>
+			<version>2.0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+	</dependencies>
+
 	<!-- Ci-dessous la configuration du build -->
 	<build>
 
@@ -161,7 +183,7 @@
 							<fileset>
 								<directory>${project.basedir}/src/main/java</directory>
 								<includes>
-									<include>fr.ribesg.imag.moustacheuml.**</include>
+									<include>**</include>
 								</includes>
 								<outputDirectory>target/${project.build.finalName}.jar/sources</outputDirectory>
 							</fileset>
