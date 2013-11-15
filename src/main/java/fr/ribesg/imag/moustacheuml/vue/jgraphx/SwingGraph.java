@@ -235,12 +235,13 @@ public class SwingGraph extends mxGraphComponent {
 			TypeLien type = lien.getType();
 			String style;
 			switch (type) {
+				// Ce switch contiendra différents cas pour les différents types de liens
 				default:
 					style = mxConstants.STYLE_ENDARROW + "=" + mxConstants.ARROW_OPEN + ";";
 					style += mxConstants.STYLE_STARTARROW + "=" + mxConstants.ARROW_OPEN + ";";
 					break;
 			}
-			Object lienGraph = graph.insertEdge(parent, IdUtils.prefixeLien(lien.getId()), "Test", idCelluleMap.get(lien.getSource().getId()), idCelluleMap.get(lien.getDestination().getId()), style);
+			Object lienGraph = graph.insertEdge(parent, IdUtils.prefixeLien(lien.getId()), null, idCelluleMap.get(lien.getSource().getId()), idCelluleMap.get(lien.getDestination().getId()), style);
 
 			idCelluleMap.put(lien.getId(), lienGraph);
 		}

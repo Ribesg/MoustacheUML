@@ -3,8 +3,12 @@ package fr.ribesg.imag.moustacheuml.controleur;
 import fr.ribesg.imag.moustacheuml.modele.Diagramme;
 import fr.ribesg.imag.moustacheuml.modele.DiagrammeClasses;
 import fr.ribesg.imag.moustacheuml.modele.DiagrammeObjets;
+import fr.ribesg.imag.moustacheuml.modele.boite.Boite;
 import fr.ribesg.imag.moustacheuml.modele.boite.Classe;
+import fr.ribesg.imag.moustacheuml.modele.boite.Objet;
 import fr.ribesg.imag.moustacheuml.modele.boite.Stereotype;
+import fr.ribesg.imag.moustacheuml.modele.lien.Navigabilite;
+import fr.ribesg.imag.moustacheuml.modele.lien.Relation;
 import fr.ribesg.imag.moustacheuml.utils.IdUtils;
 import fr.ribesg.imag.moustacheuml.vue.VueGraphique;
 import fr.ribesg.imag.moustacheuml.vue.popup.MenuContextuel;
@@ -107,7 +111,35 @@ public class ControleurEspaceDeTravail extends Observable {
 	// appropriées.
 
 	public void menuContextuelCreerLien(int x, int y, String[] creerLienBoites) {
-		// TODO Implement method
+		// FIXME Gestion basique, sans passer par une popup, pour l'instant
+		if (getModele().estClasses()) {
+			String source = creerLienBoites[0].split("=")[1];
+			String destination = creerLienBoites[1].split("=")[1];
+			Classe sourceClasse = null;
+			Classe destinationClasse = null;
+			for (Boite boite : getModele().getBoites()) {
+				if (boite.getNom().equalsIgnoreCase(source)) {
+					sourceClasse = (Classe) boite;
+				} else if (boite.getNom().equalsIgnoreCase(destination)) {
+					destinationClasse = (Classe) boite;
+				}
+			}
+			getModele().getLiens().add(new Relation(sourceClasse, destinationClasse, null, null, null, null, Navigabilite.BIDIRECTIONELLE));
+		} else {
+			String source = creerLienBoites[0].split("=")[1].split(";")[0];
+			String destination = creerLienBoites[1].split("=")[1].split(";")[0];
+			Objet sourceObjet = null;
+			Objet destinationObjet = null;
+			for (Boite boite : getModele().getBoites()) {
+				if (boite.getNom().equalsIgnoreCase(source)) {
+					sourceObjet = (Objet) boite;
+				} else if (boite.getNom().equalsIgnoreCase(destination)) {
+					destinationObjet = (Objet) boite;
+				}
+			}
+			getModele().getLiens().add(new Relation(sourceObjet, destinationObjet, Navigabilite.BIDIRECTIONELLE));
+		}
+		getModele().notifierChangements();
 	}
 
 	public void menuContextuelCreerClasse(int x, int y) {
