@@ -12,6 +12,7 @@ import fr.ribesg.imag.moustacheuml.modele.lien.Relation;
 import fr.ribesg.imag.moustacheuml.utils.IdUtils;
 import fr.ribesg.imag.moustacheuml.vue.VueGraphique;
 import fr.ribesg.imag.moustacheuml.vue.popup.MenuContextuel;
+import fr.ribesg.imag.moustacheuml.vue.popup.PopupNonImplemente;
 
 import java.util.*;
 
@@ -151,27 +152,31 @@ public class ControleurEspaceDeTravail extends Observable {
 	}
 
 	public void menuContextuelModifierClasse(int x, int y, String boiteAModifier) {
-		// TODO Implement method
+		nonImplemente("La fonction de modification de Classe n'est pas encore implémentée");
 	}
 
 	public void menuContextuelModifierObjet(int x, int y, String boiteAModifier) {
-		// TODO Implement method
+		nonImplemente("La fonction de modification d'Objet n'est pas encore implémentée");
 	}
 
 	public void menuContextuelModifierAttributsClasse(int x, int y, String boiteAModifier) {
-		// TODO Implement method
+		nonImplemente("La fonction de modification d'attributs de Classe n'est pas encore implémentée");
 	}
 
 	public void menuContextuelModifierMethodesClasse(int x, int y, String boiteAModifier) {
-		// TODO Implement method
+		nonImplemente("La fonction de modification de méthodes de Classe n'est pas encore implémentée");
 	}
 
 	public void menuContextuelModifierAttributsObjet(int x, int y, String boiteAModifier) {
-		// TODO Implement method
+		nonImplemente("La fonction de modification d'attributs d'Objet n'est pas encore implémentée");
 	}
 
 	public void menuContextuelModifierLien(int x, int y, String lienAModifier) {
-		// TODO Implement method
+		nonImplemente("La fonction de modification de Lien n'est pas encore implémentée");
+	}
+
+	private void nonImplemente(String contenu) {
+		new PopupNonImplemente(controleur, controleur.getFenetrePrincipale(), contenu).setVisible(true);
 	}
 
 	// Les méthodes suivantes gèrent la modification du modèle
